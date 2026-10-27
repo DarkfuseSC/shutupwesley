@@ -64,6 +64,12 @@ MechWarrior 5: Mercenaries mod that silences NPC banter and whining during missi
 - Verification: `tools\verify-pak.sh` (repak list), `tools\check-override.sh` (unpack, compare each override book to the shipped original; expect 0 identical).
 - Variants: patch originals with `suw_patch.py --mode quiet --src <originals> --dst stage\quiet\...`, copy into `<plugin>\ModOverride\...` (editor must be CLOSED), set mod.json displayName/description, delete Saved\Cooked, package. Same ModName so Silent and Quiet cannot be enabled together. Staged book sets: `stage\silent`, `stage\quiet`.
 
+## Release
+- Nexus: https://www.nexusmods.com/mechwarrior5mercenaries/mods/1647 (mod id 1647, category Audio, author Stealthy Sloth). Files: Silent 1.0.0 (primary main), Quiet 1.0.0 (main). Header image from `tools\make-banner.ps1`.
+- GitHub: https://github.com/DarkfuseSC/shutupwesley (public, MIT, SSH remote `git@github.com-darkfusesc:`), commit author "Stealthy Sloth" <DarkfuseSC@users.noreply.github.com>. Game assets excluded via .gitignore.
+- Release zips + SHA256: dist\ShutUpWesley-Silent-1.0.0.zip A50536721744D22A62AC1CE97D547D3290F9E31CC4DD453F174CC585C6CB6989, dist\ShutUpWesley-Quiet-1.0.0.zip F9982E7D5BABD357D663FA529CE3E9B133B7166FA3C9C6C483126FDCC3C959C5. Final builds patched from the pristine editor originals (`<Editor>\MW5Mercs\Content\DLC7\Dialogue\Barks`), mod.json gameVersion 1.15.399.
+- Game patch 1.15.399 (2026-10-27) broke Coyote 1.12-era override of ScenarioGeneratorClass (SuperStruct GetCurrentMissionVariantRowInfo crash); fixed by updating Coyote to 4.9, YAML 0.99.3.1, PurchaseSalvage DLC9 fork 1.0.1. Old versions in D:\Epic Games\Epic Games\mod-backup-20261027-1118. Diagnostic scripts: tools\find-symbol.sh, list-overrides.sh, compare-base.sh.
+
 ## Status
-- 2026-10-27: Silent v1.0.0 build 5 packaged and installed to GOG Mods folder for in-game test. Quiet books staged (stage\quiet); plugin swap blocked until editor closes.
+- 2026-10-27: v1.0.0 Silent + Quiet published on Nexus and GitHub. Next: v1.1 vanilla Inner Sphere enemy/lance books; Nexus permissions tab still at defaults.
 - 2026-10-26: project started. Editor installed from the Epic launcher to D:. Original plan (ModActor muting the Wwise voice bus) superseded by the data override above.
