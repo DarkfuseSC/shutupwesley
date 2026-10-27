@@ -1,0 +1,19 @@
+# Game-derived content never goes in the repo
+*.uasset
+*.uexp
+*.pak
+*.wem
+extracted/
+stage/
+dist/
+mod-backup/
+_to_delete/
+pak-index.txt
+pak-err.txt
+
+# Build output and logs
+package-*.log*
+__pycache__/
+ShutUpWesley/Saved/
+ShutUpWesley/Intermediate/
+ShutUpWesley/Binaries/
